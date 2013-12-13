@@ -1,0 +1,29 @@
+{
+    "license" : "MIT",
+    "description" : "An inefficient, pseudo-proxy to translate kibana searches to metric backends like Graphite"
+    "author" : {
+        "name" : "Danny Berger",
+        "email" : "<dpb587@gmail.com>",
+        "url" : "http://dpb587.me"
+    },
+    "bin" : {
+        "kibana-metrics" : "./bin/run"
+    },
+    "name" : "kibana-metrics",
+    "version" : "v0.1.2-dev",
+    "dependencies" : {
+        "commander" : "2.1.0",
+        "npmlog" : "0.0.6"
+    },
+    "engines" : {
+        "node" : ">=0.10"
+    },
+    "repository" : {
+        "type" : "git",
+        "url" : "git://github.com/dpb587/kibana-metrics.git"
+    },
+    "homepage" : "https://github.com/dpb587/kibana-metrics",
+    "bugs" : {
+        "url" : "https://github.com/dpb587/kibana-metrics/issues"
+    }
+}

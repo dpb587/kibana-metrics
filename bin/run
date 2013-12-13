@@ -1,0 +1,32 @@
+#!/usr/bin/env node
+
+var cli = require('commander');
+
+cli
+    .version('0.1.2')
+    .option('--log-level [level]', 'Log Level')
+    .option('--elasticsearch-address [host:port]', 'Upstream Elasticsearch Server')
+    .option('--graphite-address [host:port]', 'Upstream Graphite Server')
+    .option('--bind-address [host:port]', 'Bind to IP and port')
+    .parse(process.argv)
+    ;
+
+var logger = require('npmlog');
+logger.level = cli.logLevel;
+
+var proxy = require('../lib/proxy')
+    .setLogger(logger)
+    .setConfig(cli.bindAddress)
+    .setElasticsearch(
+        require('../lib/elasticsearch')
+            .setLogger(logger)
+            .setConfig(cli.elasticsearchAddress)
+        )
+    .setGraphite(
+        require('../lib/graphite')
+            .setLogger(logger)
+            .setConfig(cli.graphiteAddress)
+        )
+    ;
+
+proxy.run();
