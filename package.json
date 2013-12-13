@@ -1,6 +1,6 @@
 {
     "license" : "MIT",
-    "description" : "An inefficient, pseudo-proxy to translate kibana searches to metric backends like Graphite"
+    "description" : "An inefficient, pseudo-proxy to translate kibana searches to metric backends like Graphite",
     "author" : {
         "name" : "Danny Berger",
         "email" : "<dpb587@gmail.com>",
